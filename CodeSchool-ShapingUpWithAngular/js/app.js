@@ -5,14 +5,14 @@
 	{
 		name: 'Diamond',
 		price: 2.95, 
-		description: '...', 
+		description: 'Bushwick 3 wolf moon food truck tofu enim. Minim pariatur elit hashtag, pork belly twee typewriter gluten-free humblebrag keffiyeh accusamus intelligentsia.',  
 		canPurchase: true, 
-		soldOut: true, 
+		soldOut: false, 
 	}, 
 	{
 		name: 'Pentagon',
 		price: 5.95, 
-		description: '...', 
+		description: 'Asymmetrical VHS try-hard culpa hammock, shoreditch austin reprehenderit health goth everyday carry microdosing.', 
 		canPurchase: true, 
 		soldOut: false, 
 	}
