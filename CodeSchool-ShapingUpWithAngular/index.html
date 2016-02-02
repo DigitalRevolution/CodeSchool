@@ -9,27 +9,27 @@
 	  <div ng-repeat = "product in store.product" ng-hide = "product.soldOut">
 		<h1> {{product.name }} </h1>
 		<h3> {{product.price | currency}} </h3> 
-		<section ng-init = "tab = 1"> <!-- Init directive initializes current tab on load -->
+		<section ng-init = "tab = 1" ng-controller = "PanelController as panel"> <!-- Instruct Angular to use a new controller -->
 			<ul class = "nav nav-pills"> <!-- Bootstrap --> 
-				<li ng-class = "{ active:tab === 1 }"> <!-- class directive with an object argument class to be added : expression to evaluate --> 
-					<a href ng-click = "tab = 1">Description</a> 
+				<li ng-class = "{active : panel.isSelected(1)}"> <!-- class directive with an object argument class to be added : expression to evaluate --> 
+					<a href ng-click = "panel.selectTab(1)">Description</a> 
 				</li>
-				<li ng-class = "{ active:tab === 2 }">
-					<a href ng-click = "tab = 2">Specifications</a> 
+				<li ng-class = "{active : panel.isSelected(2)}">
+					<a href ng-click = "panel.selectTab(2)">Specifications</a> 
 				</li>
-				<li ng-class = "{ active:tab === 3 }">
-					<a href ng-click = "tab = 3">Reviews</a> 
+				<li ng-class = "{active : panel.isSelected(3)}">
+					<a href ng-click = "panel.selectTab(3)">Reviews</a> 
 				</li>
 			</ul>
-		<div class = "panel" ng-show = "tab === 1">
+		<div class = "panel" ng-show = "panel.isSelected(1)">
 			<h4>Description</h4> 
 			<p>{{product.description}}</p> 
 		</div>
-		<div class = "panel" ng-show = "tab === 2">
+		<div class = "panel" ng-show = "panel.isSelected(2)">
 			<h4>Specifications</h4> 
 			<blockquote>None Yet</blockquote>
 		</div>
-		<div class = "panel" ng-show = "tab === 3">
+		<div class = "panel" ng-show = "panel.isSelected(3)">
 			<h4>Reviews</h4> 
 			<blockquote>None Yet</blockquote>
 		</div>
